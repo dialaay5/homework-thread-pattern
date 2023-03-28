@@ -46,16 +46,15 @@ public class TenThraeds extends Thread {
         if (this.threadNumber != 10) {
             System.out.printf("thread name: %d\n", this.threadNumber);
         } else {
-            synchronized (key) {
                 try {
-                    key.wait(1500);
+                    Thread.sleep(1500);
                     System.out.printf("thread name: %d\n", this.threadNumber);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
-    }
+
 
 
 
